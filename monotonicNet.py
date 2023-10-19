@@ -46,6 +46,7 @@ for x in range(10):
     print(point, model(point, training=False))
 
 #save network
+#prompt for name?
 name = '1nYeX'
 
 model.save(f'networks/{name}')
