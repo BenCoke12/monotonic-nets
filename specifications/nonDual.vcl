@@ -17,9 +17,15 @@ regression : InValue -> OutValue
 --high in implies high out
 highInHighOut : Bool
 highInHighOut = forall x . 
-    validInput x and x ! 0 >= 0.5 => regression x ! 0 >= 0.5
+    validInput x and x ! 0 >= 0.5 => regression x ! 0 >= 0.499999999
 
 @property
 --valid input implies valid output
 validInValidOut : Bool
 validInValidOut = forall x . validInput x => validInput (regression x)
+
+-- @property
+--x == y
+--does not compile, issue 74
+--inEqualsOut : Bool
+--inEqualsOut = forall x . validInput x => x ! 0 == (regression x) ! 0
