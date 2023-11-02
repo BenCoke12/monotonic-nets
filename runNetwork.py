@@ -6,7 +6,7 @@ import onnx
 import sys
 
 onnxName = '1nYeX.onnx'
-onnx_model = onnx.load(f"./onnx/{onnxName}")
+#onnx_model = onnx.load(f"./onnx/{onnxName}")
 
 x = 0.5
 

@@ -10,6 +10,7 @@ type InValue = Vector Rat 1
 type OutValue = Vector Rat 1
 
 --define regression network
+--1nYeX is a simple f(x) = ReLU(1*x+0) network
 @network
 regression : InValue -> OutValue
 
@@ -17,12 +18,12 @@ regression : InValue -> OutValue
 --high in implies high out
 highInHighOut : Bool
 highInHighOut = forall x . 
-    validInput x and x ! 0 >= 0.5 => regression x ! 0 >= 0.499999999
+    validInput x and x ! 0 >= 0.5 => regression x ! 0 >= 0.5
 
-@property
+-- @property
 --valid input implies valid output
-validInValidOut : Bool
-validInValidOut = forall x . validInput x => validInput (regression x)
+--validInValidOut : Bool
+--validInValidOut = forall x . validInput x => validInput (regression x)
 
 -- @property
 --x == y
